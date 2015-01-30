@@ -4,9 +4,9 @@ Python script to automatically change CW Skimmer frequency based on a time perio
 
 ## Setup Options
 
-To use `sdriqswitcher.py` you only need to edit a couple of bits of the script these being 'callsign = "m3php"' replacing m3php with you're own callsign.
+To use `sdriqswitcher.py` you only need to edit a couple of bits of the script these being `callsign = "m3php"` replacing m3php with you're own callsign.
 
-You might also need to change HOST = "localhost" to the ip address of the windows computer if your running the script on another system for example the Raspberry Pi.
+You might also need to change `HOST = "localhost"`  to the ip address of the windows computer if your running the script on another system for example the Raspberry Pi.
 
 The script listens on the default telnet port `7300` if you have told CW Skimmer to use another port you will need to change this.
 
