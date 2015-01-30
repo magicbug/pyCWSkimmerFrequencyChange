@@ -49,7 +49,7 @@ def do_something(sc):
         tn.write("skimmer/qsy 28025.0\n")
         frequency = "28025.0"
     elif frequency is '28025.0':
-        tn.write("skimmer/qsy 28025.0\n")
+        tn.write("skimmer/qsy 1830.0\n")
         frequency = "1830.0"
 
     print "QSY: " + frequency
