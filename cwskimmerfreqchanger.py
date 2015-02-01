@@ -1,25 +1,38 @@
-import sys
-import telnetlib
-import sched, time
+import sys, telnetlib, sched, time
 
+# Telnet Connection Information
 HOST = "localhost"
 user = "m3php"
 
-# set default frequency
+# Set Default Frequency (should always be zero)
 frequency = "0"
 
-# Connect to telnet
-tn = telnetlib.Telnet(HOST, '7300')
-
-# Wait till CW Skimmer Telnet Server Asks for Callsign
-tn.read_until("Please enter your callsign:")
-tn.write(user + "\n") # send the callsign
-
-print "Connected to CW Skimmer\n"
-
+# Define the Scheduler
 s = sched.scheduler(time.time, time.sleep)
+
+def connction():
+    global tn
+
+
 def do_something(sc):
     global frequency
+
+    count = 0
+    while (count is 0):
+        try:
+            # Connect to telnet
+            tn = telnetlib.Telnet(HOST, '7300')
+
+            # Wait till CW Skimmer Telnet Server Asks for Callsign
+            tn.read_until("Please enter your callsign:")
+            tn.write(user + "\n") # send the callsign
+
+            print "Connected to CW Skimmer\n"
+            count = 1
+        except:
+            print "Connection to CW Skimmer Failed\n"
+            count = 0
+
     # QSY frequency
     if frequency is '0':
         tn.write("skimmer/qsy 1830.0\n")
@@ -57,6 +70,7 @@ def do_something(sc):
     # Run scheduler every 120 seconds
     sc.enter(120, 1, do_something, (sc,))
 
-print "Controlling CW Skimmer\n"
+connction()
+print "CW Skimmer Band Change Automation Script\n"
 s.enter(0, 1, do_something, (s,)) # Run at second 0
 s.run() # run the scheduler

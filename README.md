@@ -4,7 +4,7 @@ Python script to automatically change CW Skimmer frequency based on a time perio
 
 ## Setup Options
 
-To use `cwskimmerfreqchanger.py` you only need to edit a couple of bits of the script these being `callsign = "m3php"` replacing m3php with you're own callsign.
+To use `cwskimmerfreqchanger'.py` you only need to edit a couple of bits of the script these being `callsign = "m3php"` replacing m3php with you're own callsign.
 
 You might also need to change `HOST = "localhost"`  to the ip address of the windows computer if your running the script on another system for example the Raspberry Pi.
 
