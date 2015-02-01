@@ -16,5 +16,5 @@ The script listens on the default telnet port `7300` if you have told CW Skimmer
 
 ## Task List
 
-- [ ] Make the script function even if Telnet connection fails, reconnecting till it does.
+- [x] Make the script function even if Telnet connection fails, reconnecting till it does.
 - [ ] Read frequency list from array or json input file.
